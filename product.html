@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Curated Picks</title>
+  <meta name="description" content="A closer look at one of our curated picks." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: "#FAF9F6",
+            surface: "#FFFFFF",
+            ink: "#1C1B19",
+            muted: "#6B6963",
+            accent: "#B33F62",
+            "accent-dark": "#8C2F4B",
+          },
+          fontFamily: {
+            display: ["Fraunces", "serif"],
+            body: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-bg text-ink font-body antialiased">
+
+  <header class="sticky top-0 z-30 bg-bg/90 backdrop-blur border-b border-ink/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-display text-xl tracking-tight">Curated&nbsp;Picks</a>
+      <a href="index.html" class="text-sm text-muted hover:text-ink transition-colors">&larr; Back to all picks</a>
+    </div>
+    <div class="bg-accent/5 text-center text-xs text-muted py-1.5 px-4">
+      Some links on this site are affiliate links — we may earn a commission at no extra cost to you.
+    </div>
+  </header>
+
+  <main id="product-root" class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <!-- Populated by js/product-page.js -->
+  </main>
+
+  <footer class="border-t border-ink/5 mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-muted">
+      <p class="mb-2">
+        Affiliate Disclosure: Curated Picks participates in affiliate programs and may earn a commission on purchases made through links on this site, at no additional cost to you.
+      </p>
+      <p>&copy; <span id="year"></span> Curated Picks. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="product-page.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
